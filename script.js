@@ -20,7 +20,7 @@ function writePassword() {
         var specialCharacters = Boolean(confirm("Special characters?"));
         var letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
         var numberPool = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
-        var specialCharactersPool = [];
+        var specialCharactersPool = ["!", "@", "#", "$", "%", "&", "*", "_"];
   
         function generateUpperCase() {
           var upperCaseLettersIndex = Math.floor(Math.random() * letters.length);
@@ -46,13 +46,14 @@ function writePassword() {
         function generateSpecial() {
           var specialIndex = Math.floor(Math.random() * specialCharactersPool.length);
           var specialChoice = specialCharactersPool[specialIndex];
+          return specialChoice;
         };
 
         if (!upperCaseLetters && !lowerCaseLetters && !numbers && !specialCharacters) {
           alert("No criteria established.")
-        } else if (upperCaseLetters == true && lowerCaseLetters == true && numbers == true && !specialCharacters) {
+        } else if (upperCaseLetters == true && lowerCaseLetters == true && numbers == true && specialCharacters == true) {
           function randomFunction() {
-            var availableFunctions = [generateUpperCase(), generateLowerCase(), generateNumbers()];
+            var availableFunctions = [generateUpperCase(), generateLowerCase(), generateNumbers(), generateSpecial()];
               function availableIndex() {
                 var index = Math.floor(Math.random() * availableFunctions.length);
                 return index;
