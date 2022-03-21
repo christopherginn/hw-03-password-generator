@@ -16,10 +16,10 @@ function writePassword() {
 
       var passwordLength = Number(prompt("How many characters would you like your password to have?" + "Passwords must be 8-128 characters."));
       if (passwordLength >= 8 && passwordLength <= 128) {
-        var upperCaseLetters = Boolean(confirm("Upper case letters?"));
-        var lowerCaseLetters = Boolean(confirm("Lower case letters?"));
-        var numbers = Boolean(confirm("Numbers?"));
-        var specialCharacters = Boolean(confirm("Special characters?"));
+        var upperCaseLetters = Boolean(confirm("Would you like your password to contain Upper Case letters? \n\ \n\ OK for 'Yes,' Cancel for 'No.'"));
+        var lowerCaseLetters = Boolean(confirm("Would you like your password to contain Lower Case letters? \n\ \n\ OK for 'Yes,' Cancel for 'No.'"));
+        var numbers = Boolean(confirm("Would you like your password to contain Numbers? \n\ OK for 'Yes,' Cancel for 'No.'"));
+        var specialCharacters = Boolean(confirm("Would you like your password to contain Special Characters? \n\ OK for 'Yes,' Cancel for 'No.'"));
 
         var letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
         var numberPool = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
@@ -94,7 +94,7 @@ function writePassword() {
           for (var i = 0; i < passwordLength; i++) {
             passwordArray.push(randomFunction());
           }
-          console.log(passwordArray);
+          // console.log(passwordArray);
           passwordArrayText = passwordArray.join(""); // .join displays array without any commas
           alert("Your password is ready! Click OK to reveal it!");
           return passwordArrayText;
